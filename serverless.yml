@@ -20,9 +20,6 @@ service: sms-schedular
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
 
-plugins:
-  - serverless-offline
-
 custom: ${file(./variables.yaml)}
 provider:
   name: aws
@@ -73,7 +70,9 @@ functions:
           method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
-#      - schedule: rate(10 minutes)
+#      - schedule: cron(0 8 * * *)
+#      - schedule: cron(0 14 * * *)
+#      - schedule: cron(0 20 * * *)
 #      - sns: greeter-topic
 #      - stream: arn:aws:dynamodb:region:XXXXXX:table/foo/stream/1970-01-01T00:00:00.000
 #      - alexaSkill: amzn1.ask.skill.xx-xx-xx-xx
